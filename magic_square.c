@@ -1,3 +1,4 @@
+// The application of 2D arrray
 #include <stdio.h>
 
 int main() {
