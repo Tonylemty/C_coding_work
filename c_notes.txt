@@ -214,11 +214,5 @@ eg.
 2 x 3 x 4 (2 width * 3 height * 4 length)
 -> array_name[2][3][4]
 
-# Poiter
-
-1. 
-
-
-
 
 
