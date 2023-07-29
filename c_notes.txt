@@ -1,0 +1,224 @@
+# The kind of varible in C:
+
+integer:
+1.short
+2.int
+3.long
+4.long long
+They are different in their saving range
+
+floating point:
+1.float
+2.double
+3.long double
+Floating point also different in their saving range
+When floating point is dividing, yor can't get the remainder in C
+
+character:
+1.char // What it can do is store one single character, and only use single quotation marks
+eg.
+char grade = 'A' 
+
+String
+
+Definition
+A collection of characters that are grouped together
+
+How to declare a string
+eg.
+char phase[] = "Giraffe Academy" // You can't modify the string 
+
+
+
+# The input and output format in C:
+
+output:
+1. The value is interger:
+If we want to print interger can use %d, %i, %li, %lli
+// %d fits the type of "int", "short", "long"
+// %i fits the type of "int", "short"
+// %li and %lli fit the type of "long", "long long"
+eg.
+printf("%i", num)
+// The %o is used to print out the octal number
+// The %x and %X are used to print out the hexadecimal number
+
+2. The value is decimal number:
+Decimal number can use %f to print out
+// %f fits the type of "double", "float"
+eg.
+printf("%f", 3.1415)
+
+3. The value are string or single character
+String can use %s to print out
+eg.
+printf("%s", "number")
+
+Single character can use %c to print out 
+eg.
+printf("%c", 'i')
+
+
+input:
+1.input two informations in two values:
+use 'scanf("%i%f", &money, &_100m)' 
+
+# The arithmetic operator in C:
+
+1. "+"
+2. "-"
+3. "*"
+4. "/" # when interger is dividing, the decimal would be removed
+5. "%" take the remainder
+
+# Type Casting
+
+Definition
+Casting means you can add a type in front of the value to force the value turn what type you add
+eg.
+printf("%f", (float)n / 2);
+
+
+# Flow control:
+
+Selection:
+1.if
+eg. 
+if(condition)
+  {
+    statement
+  }
+2.if...else
+eg.
+if(condition)
+{
+    statement A
+}
+else
+{
+    statement B
+}
+3.switch...case
+eg.
+switch(identifier)
+{
+  case labelA:
+    statementsA
+    break 
+    // if you only want to output statementsA, you must add the "break" below the statementsA
+  case labelB:
+    statementsB
+  case labelC:
+    statementsC
+
+  default:
+    statements;
+}
+4. ?:
+
+definiton:
+(condition)?(statementa):(statementb);
+if condition is true, program will return statementa
+if condition is false, program will return statementb
+eg.
+int a, b;
+a = 1;
+b = 5;
+printf((a < b)?("%d < %d"):("%d > %d"), a, b);
+
+# Loop
+1. for
+
+eg.
+for(initialization; condition; increasement)
+{
+  statement
+}
+
+2. while
+eg.
+while(condition)
+{
+  statement
+}
+
+3. do...while
+eg.
+do
+{
+  statement
+}while(condition);
+whether the condition is true or not, the program would run the statement one time first  
+
+# Control the loop
+
+1.break
+Would directly escape the loop
+2.continue
+Whould directly skip the rested codes 
+
+# Array
+
+1.declare the array
+type arrayname[size];
+
+eg.
+int arrayname[3]; # the three in bracket is the size of the array
+array[0] = 1; # the one in bracket is the position in the array
+
+2.intialize the array
+type arrayname[size] = {value1, value2, ...}
+
+eg.
+int array[3] = {1, 2, 3}
+
+# Sort
+1.bubble sort
+Definition:
+compare the adjacent element to adjust the order repeatedly until all the element sorted.
+
+2.selection sort
+Definiton:
+Select the minimum or maximum element them move it to the front until all the element sorted.
+
+3.insertion sort
+Definition:
+Insert element into correct position one by one.
+
+# Modul in C
+#include <stdlib.h> // random modul
+#include <time.h> // time modul
+
+# Compare operators
+1. == equal to
+2. > greater than
+3. < less than
+4. >= greater than and equal to
+5. <= less than and equal to
+6. != not equal to
+
+# Logical operators
+1.&& and
+2.|| or 
+3.! not
+
+# Multidimensional array
+
+1. 2D array
+eg.
+2 x 3 means (2 row列 * 3 column行) 口訣：列在前,行在後
+-> arrar_name[2][3]
+
+2. 3D array
+eg.
+2 x 3 x 4 (2 width * 3 height * 4 length)
+-> array_name[2][3][4]
+
+# Poiter
+
+1. 
+
+
+
+
+
