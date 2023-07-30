@@ -28,7 +28,14 @@ How to declare a string
 eg.
 char phase[] = "Giraffe Academy" // You can't modify the string 
 
+Constants
 
+Definition
+It can make the value unable to be modified
+
+How to declare a constants value
+eg.
+const int NUM = 5
 
 # The input and output format in C:
 
@@ -77,6 +84,24 @@ Definition
 Casting means you can add a type in front of the value to force the value turn what type you add
 eg.
 printf("%f", (float)n / 2);
+
+# The math function in C
+
+1. pow(num1, num2)
+eg.
+pow(2, 3) -> 8
+
+2. sqrt(num)
+eg.
+sqrt(36) -> 6
+
+3. ceil(decimal number) // Would round the number up
+eg.
+ceil(36.356) -> 37
+
+4. floor(decimal number) // Would round the number down
+eg.
+floor(36.656) -> 36
 
 
 # Flow control:
