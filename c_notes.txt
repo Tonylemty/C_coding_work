@@ -53,6 +53,7 @@ printf("%i", num)
 2. The value is decimal number:
 Decimal number can use %f to print out
 // %f fits the type of "double", "float"
+// %lf only fits the type of "double"
 eg.
 printf("%f", 3.1415)
 
@@ -67,8 +68,30 @@ printf("%c", 'i')
 
 
 input:
-1.input two informations in two values:
-use 'scanf("%i%f", &money, &_100m)' 
+1. Input the interger
+eg.
+scanf("%i", &age)
+
+2. Input the decimal
+eg.
+scanf("%f", &gpa)
+// If the type is "double" -> use "%lf"
+
+3. Input the character
+eg. 
+scanf("%c", &grade)
+
+4. Input  the string
+eg.
+char name[number]
+-> In the brackets, you should specifly how many characters you want to store in string
+scanf("%s", name) // We don't need the ampersand here
+
+※ fgets -> Would grab a whole line of text, not store like interger, character etc.
+eg.
+fgets(name, numbers, stdin)
+name: The name of the string
+numbers: How many characters you want to store
 
 # The arithmetic operator in C:
 
