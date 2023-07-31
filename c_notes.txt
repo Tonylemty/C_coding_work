@@ -262,5 +262,19 @@ eg.
 2 x 3 x 4 (2 width * 3 height * 4 length)
 -> array_name[2][3][4]
 
+# Pointer
+
+Defition
+We can manipulate the memory's position
+
+How to declare the pointer
+eg.
+int *positoin = &var
+*(postion) = 100
+
+
+// int postion = &var -> Would get the variable's position which is in the memory 
+// printf("%p", position) -> Would get the memory's position
+
 
 
