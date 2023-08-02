@@ -271,10 +271,50 @@ How to declare the pointer
 eg.
 int *positoin = &var
 *(postion) = 100
-
+-> The value in var would chage to 100
 
 // int postion = &var -> Would get the variable's position which is in the memory 
 // printf("%p", position) -> Would get the memory's position
 
+# The structure in C
 
+Definition
+Structure create a data type that can be used to group items of possibly different types into a single type
+
+How to create a structure
+eg.
+struct name {
+  char name[100];
+};
+
+int main() {
+  struct name n = {{"Joe", "Amy", "Jack"}};
+  printf("%s %s %s", n.name[0], n.name[1], n.name[2]); 
+}
+
+Pointer and structure
+eg.
+struct E {
+  char name[100], id[100];
+  int num;
+
+};
+
+int main() {
+  
+  struct E e[10] = {{"Jack", 1, "E126"}, {"Amy", 2, "A234"}};
+
+  struct E *ptr;
+
+  ptr = &e[1];
+  printf("%s\n%d\n%s", ptr -> name, ptr -> num, ptr -> id); 
+
+  // equal to printf("%s\n%d\n%s", (*ptr).name, (*ptr).num, (*ptr).id);
+}
+
+Allocate the memory
+
+eg.
+int *ptr
+ptr = malloc(sizeof(int)) // We ask the computer for a piece of memory 
 
