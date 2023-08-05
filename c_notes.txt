@@ -92,6 +92,9 @@ eg.
 fgets(name, numbers, stdin)
 name: The name of the string
 numbers: How many characters you want to store
+※ scanf("%[^\n]%*c") also can grab a whole line of text.
+
+!!! If there is another scanf before "scanf("%[^\n]%*c")", it will not work because the last statement will read a newline character "\n" from the previous line. Thus, we can type scanf("\n") before it.
 
 # The arithmetic operator in C:
 
@@ -207,8 +210,9 @@ Whould directly skip the rested codes
 
 # Array
 
-1.declare the array
-type arrayname[size];
+1. Declare the array
+eg.
+type in array arrayname[size];
 
 eg.
 int arrayname[3]; # the three in bracket is the size of the array
@@ -219,6 +223,36 @@ type arrayname[size] = {value1, value2, ...}
 
 eg.
 int array[3] = {1, 2, 3}
+
+# Functions
+
+1. Definition
+A collection of code that does a specific task
+
+2. How to declare the functions
+eg.
+return type function_name(type parameter) {
+  statements
+}
+-> void print(int num) {
+  printf("%d", 1)
+}
+3. Return statement
+
+(1) Definition
+It's a line of code will return information back to whoever called it
+
+(2) How to write
+eg.
+double cube(double num) {
+  double result = num * num * num;
+  return result // This line will return the value "result" back to the caller which is "cube(3.0)"
+}
+
+// "void" type will not return any information 
+
+
+
 
 # Sort
 1.bubble sort
