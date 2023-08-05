@@ -143,13 +143,25 @@ if(condition)
 eg.
 if(condition)
 {
-    statement A
+    statementA
 }
 else
 {
-    statement B
+    statementB
 }
-3.switch...case
+3.if...else if...else
+eg.
+if(conditionA) {
+  statementA
+}
+else if(conditionB) {
+  statementB
+}
+else {
+  statement
+}
+
+4.switch...case
 eg.
 switch(identifier)
 {
@@ -159,6 +171,7 @@ switch(identifier)
     // if you only want to output statementsA, you must add the "break" below the statementsA
   case labelB:
     statementsB
+    
   case labelC:
     statementsC
 
@@ -205,6 +218,7 @@ whether the condition is true or not, the program would run the statement one ti
 
 1.break
 Would directly escape the loop
+
 2.continue
 Whould directly skip the rested codes 
 
@@ -251,9 +265,6 @@ double cube(double num) {
 
 // "void" type will not return any information 
 
-
-
-
 # Sort
 1.bubble sort
 Definition:
@@ -280,7 +291,7 @@ Insert element into correct position one by one.
 6. != not equal to
 
 # Logical operators
-1.&& and
+1.&& and  
 2.|| or 
 3.! not
 
