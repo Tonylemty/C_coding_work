@@ -295,6 +295,14 @@ Insert element into correct position one by one.
 2.|| or 
 3.! not
 
+# Bitwise
+1. & -> and
+2. | -> or
+3. ^ -> xor
+4. ~ -> not
+5. << -> left shift
+6. >> -> right shift
+
 # Multidimensional array
 
 1. 2D array
@@ -310,16 +318,26 @@ eg.
 # Pointer
 
 Defition
-We can manipulate the memory's position
+Pointer just a memory address
 
-How to declare the pointer
+Explanation
+
+1. We store a pointer inside of a pointer variable
+2. When we create a pointer variable, what we want to do is to store the memory address of variable
+
+Dereferencing pointer
+
+Definition
+Dereferencing pointer means we're going to grab the actual value that stored at the memory address that the pointer was pointing to
+
 eg.
-int *positoin = &var
-*(postion) = 100
--> The value in var would chage to 100
+int age = 30
+int *pAge = &age -> The symbol of "*" means dereferencing
 
-// int postion = &var -> Would get the variable's position which is in the memory 
-// printf("%p", position) -> Would get the memory's position
+printf("%d", *pAge) -> It will print out 30 
+// printf("%p", &age) -> Would get the value's memory address in the computer
+
+
 
 # The structure in C
 
@@ -361,5 +379,14 @@ Allocate the memory
 
 eg.
 int *ptr
-ptr = malloc(sizeof(int)) // We ask the computer for a piece of memory 
+ptr = malloc(sizeof(int)) // We ask the computer for a piece of memory
+
+# Writing files in C
+
+1. fopen("The file name", mode of the funciton) -> To open the file
+// Mode: r -> read; w -> write; a -> append
+
+2. fclose("filename") -> To close the file
+
+3. fprintf(filename, "The content of the file")
 
