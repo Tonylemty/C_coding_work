@@ -1,0 +1,20 @@
+Pointers
+
+# Introduction
+
+1.Definition:
+Pointer is a variables that store address of another variable
+
+2.Example to introduct
+eg.
+int a = 5;
+int *p; -> Computer would allocate a memory address for p, and p is a pointer for interger
+p = &a; -> p points to the address of a 
+print p -> get the address of a
+print &a -> get the address of a
+print &p -> get the address of p
+print *p -> get the value of 5 -> This calls Dereferencing
+
+-> p is address; *p is a value at address
+
+
