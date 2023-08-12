@@ -15,6 +15,80 @@ print &a -> get the address of a
 print &p -> get the address of p
 print *p -> get the value of 5 -> This calls Dereferencing
 
--> p is address; *p is a value at address
+-> p is address; *p is a value which is stored in p
 
+------------------------------------------------------------
+
+# Pointer application
+
+1. Pointer to pointer - Example to introduct
+eg.
+int x = 5;
+int *p = &x;
+int **q; -> This is a pointer to pointer
+q = &p;
+int ***r;
+r = &q;
+
+printf("%d\n", &x);
+printf("%d\n", p); // x memory address
+printf("%d\n", *p); // *p = 5
+printf("%d\n", *q); // x memory address
+printf("%d\n", **q); // **q = 5
+printf("%d\n", **r); // x memory address
+printf("%d\n", ***r); // ***r = 5
+
+2. Pointer as funciton arguments(Call by reference)
+eg.
+void Increment(int *p) {
+    *p += 1;
+}
+
+int main() {
+
+    int a = 10;
+    Increment(&a);
+    printf("%d", a);   
+}
+
+3. Pointer and arrays
+eg.
+int a[] = {2, 4, 5, 8, 1};
+       
+for (int i = 0; i < 5; i++) {
+printf("Memory address: %d\n", &a[i]); -> address
+printf("Memory address: %d\n", a + i); -> address
+printf("Value: %d\n", a[i]); -> value
+printf("Value: %d\n", *(a + i)); -> value
+}
+=> &a[i] == (a + i); a[i] == *(a + i)
+
+4. Character arrays and pointers
+(1) How to store strings
+eg.
+char s[5] -> The size of the strings must include '\0'
+s[0] = "j"
+s[1] = "o"
+s[2] = "h"
+s[3] = "n"
+
+(2) Arrays and pointers are different type are used in similar manner
+
+(3) Arrays are always passed to function by reference
+
+(4) Constant array
+eg. 
+char *c = "Hello" -> This array cannot be changed
+
+---------------------------------------------------------------
+
+# Arrays as function arguments
+
+1. Introduction
+When the array as function arguments
+-> Complier just creates a pointer variable by the same name
+-> Complier also creates a data type of the array
+-> Complier just copies the address of the first element in the array
+
+=> void (int a[]) == void (int *a) 
 
