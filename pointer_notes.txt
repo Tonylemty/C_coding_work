@@ -1,4 +1,4 @@
-Pointers
+## Pointers
 
 # Introduction
 
@@ -90,5 +90,131 @@ When the array as function arguments
 -> Complier also creates a data type of the array
 -> Complier just copies the address of the first element in the array
 
-=> void (int a[]) == void (int *a) 
+=> void (int a[]) == void (int *a)
+
+--------------------------------------------------------
+
+# Pointers and multi-dimensional arrays
+
+1. 2D arrays
+
+(1) How to use pointer to declare a 2D array
+eg.
+int b[2][3];
+int (*p)[3] = b; -> pointer to one dimensional array of three elements
+
+(2) Introduction
+b[i][j] = *(b[i] + j) = *(*(b + i) + j)
+
+(3) 2D arrays as function arguments
+eg.
+void func(int a[][3] or (*a)[3])
+
+(4) The example of 2D arrays
+eg.
+int b[2][3] = {{2, 3, 6}, {4, 5, 8}}
+int (*p)[3] = b
+print b or &b[0] => 400
+print *b or b[0] or &b[0][0] => 400
+print *(b + 1) + 2 or b[1] + 2 or &b[1][2] => 420
+print *(*b + 1) => 3
+
+==> When you dereferencing, you can see it as brackets being removed
+
+2. 3D arrays
+
+(1) How to use pointer to declare a 3D array
+eg.
+int c[3][2][2];
+int (*p)[2][2] = c;
+
+(2) Introduction
+c[i][j][k] = *(c[i][j] + k) = *(*(c[i] + j) + k)
+
+= *(*(*(c + i) + j) + k)
+
+(3) The example of 3D arrays
+eg.
+int c[3][2][2]
+int (*p)[2][2] = c
+print c => 800
+print *c or c[0] or &c[0][0] => 800
+print (c[0][1] + 1) or c[0][1][1] => 9
+print (c[1] + 1) or c[1][1] or &c[1][1][0] => 824
+
+--------------------------------------------------------------------
+
+# Dynamic memory
+
+1. Four segments of the memory
+
+Heap -> Store variables which use "malloc function" to intialize
+
+Stack -> Store all the informations of function calls and all the local variables
+
+Static/Global -> Store all the static or global variables
+
+Code -> Store the instructions that needs to be executed
+
+2. Introductin of funcitons
+
+(1) malloc
+
+Definition
+-> void* malloc(size_type size) // size_type must be the positive value or zero
+
+Characteristic
+-> Malloc will return a void pointer that give us the address of the first byte in this block
+// void pointer cannot be dereferenced
+
+Example
+eg. 1
+void *p = malloc(sizeof(int)) -> We need memory for just one integer
+void *p = malloc(10* sizeof(int)) -> We need memory for ten integer
+
+eg. 2
+int *p = (int*)malloc(sizeof(int)) -> This example uses the typecasting to turn the void to integer
+
+
+(2) calloc
+
+Definition
+-> void* calloc(size_type num, size_type size)
+
+Example
+eg.
+int *p = (int*)calloc(3, sizeof(int))
+
+(3) realloc // Change the size of memory
+
+Defintion
+-> void* realloc(void* ptr, size_type size)
+
+Example
+eg. 1
+int *b = (int*)realloc(a, 2*n*sizeof(int))
+
+eg. 2
+int *b = (int*)realloc(a, 0) equivalent to free(a)
+
+eg. 3
+int *b = (int*)realloc(NULL, n*sizeof(int)) equivalent to malloc()
+
+(4) free // Dealloc the memory
+
+
+# Pointers and function 
+
+1. How to declare a pointer to point to the function
+eg.
+int (*p)(int, int)
+
+2. How to declare a function would return a pointer
+eg.
+int* func(int, int) -> Declare a function which would return int*
+
+-----------------------------------------------------
+
+
+
 
