@@ -205,16 +205,63 @@ int *b = (int*)realloc(NULL, n*sizeof(int)) equivalent to malloc()
 
 # Pointers and function 
 
-1. How to declare a pointer to point to the function
+1. Pointers as function returns
+(1) How to declare a function would return pointers
 eg.
-int (*p)(int, int)
+int* func(int, int) -> Declare a function which would return a pointer to integer
 
-2. How to declare a function would return a pointer
+(2) Example
 eg.
-int* func(int, int) -> Declare a function which would return int*
+int* add(int* a, int* b) { // a and b is pointer to integers
+    int c = (*a) + (*b);
+    return &c;
+}
+int main() {
+
+    int a = 2, b = 4;
+    int* ptr = add(&a, &b);
+    printf("%d", *ptr);
+}
+
+
+2. Funciton Pointers
+(1) How to declare a pointer to point to the function
+eg.
+int (*p)(int, int) // Must put the paranthesis to bracket the variable
+-> Type in all argument types of the function which this pointer will point
+
+(2) Example
+
+int add(int a, int b) {
+    return a + b;
+}
+int main() {
+
+    int c;
+    int(*p)(int, int);
+    p = &add // p = add
+    c = (*p)(2, 3); // c = p(2, 3)
+}
 
 -----------------------------------------------------
 
+# Function Pointers and callbacks
+
+1. Example
+eg.
+void a() {
+    printf("Hello");
+}
+void b(void (*ptr)()) { // function pointer as argument
+    ptr(); // call-back function that "ptr" points to 
+}
+int main() {
+
+    void (*p)() = a;
+    b(p);
+}
+
+----------------------------------------------
 
 
 
